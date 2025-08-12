@@ -9,15 +9,12 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    defaults:
-     run:
-      working-directory: angular-host-app
     steps:
       - uses: actions/checkout@v4
       - run: npm install && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MICROFE_ANGULAR_HOST }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
-          projectId: microfe-angular-host
+          projectId: angulaar-host-app
