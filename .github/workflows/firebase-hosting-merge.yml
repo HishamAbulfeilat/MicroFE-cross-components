@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: angular-host-app 
+        working-directory: angular-host-app
 
     steps:
       - name: Checkout code
@@ -24,8 +24,10 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}      # GitHub token, needed for PR comments and status
-          firebaseToken: ${{ secrets.FIREBASE_TOKEN }} # Firebase CLI token created via firebase login:ci
-          channelId: live                             # or remove if deploying to default hosting channel
-          projectId: microfe-angular-host             # Your Firebase project ID
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MICROFE_ANGULAR_HOST }}
+          channelId: live
+          projectId: microfe-angular-host
