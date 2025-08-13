@@ -12,11 +12,11 @@
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },
- "scripts": {
-  "start": "cross-env PORT=3000 craco start",
-  "build": "craco build",
-  "test": "craco test",
-  "eject": "react-scripts eject"
+  "scripts": {
+    "start": "cross-env PORT=3000 craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
+  "devDependencies": {
+    "webpack": "^5.101.1"
   }
 }

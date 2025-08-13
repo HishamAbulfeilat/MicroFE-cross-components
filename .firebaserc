@@ -5,11 +5,23 @@
   "targets": {
     "angulaar-host-app": {
       "hosting": {
+        "angularHostApp": [
+          "angular-host-site-id"
+        ],
         "angularRemoteApp": [
-          "angularHostApp"
+          "angular-remote-site-id"
+        ],
+        "reactHostApp": [
+          "react-host-site-id"
+        ],
+        "reactRemoteApp": [
+          "react-remote-site-id"
+        ],
+        "vueHostApp": [
+          "vue-host-site-id"
         ],
         "vueRemoteApp": [
-          "angular-host-app"
+          "vue-remote-site-id"
         ]
       }
     }
