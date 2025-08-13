@@ -6,22 +6,22 @@
     "angulaar-host-app": {
       "hosting": {
         "angularHostApp": [
-          "angular-host-site-id"
+          "angular-host-app"
         ],
         "angularRemoteApp": [
-          "angular-remote-site-id"
+          "angular-remote-app"
         ],
         "reactHostApp": [
-          "react-host-site-id"
+          "react-host-app"
         ],
         "reactRemoteApp": [
-          "react-remote-site-id"
+          "react-remote-app"
         ],
         "vueHostApp": [
-          "vue-host-site-id"
+          "vue-host-app"
         ],
         "vueRemoteApp": [
-          "vue-remote-site-id"
+          "vue-remote-app"
         ]
       }
     }
