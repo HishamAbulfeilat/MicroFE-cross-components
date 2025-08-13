@@ -32,7 +32,6 @@ jobs:
       - name: Build Angular Host App
         run: |
           cd angular-host-app
-          rm -rf node_modules package-lock.json
           npm install --force
           npm run build
           cd ..
@@ -41,7 +40,6 @@ jobs:
       - name: Build Angular Remote App
         run: |
           cd angular-remote-app
-          rm -rf node_modules package-lock.json
           npm install --force
           npm run build
           cd ..
@@ -50,7 +48,6 @@ jobs:
       - name: Build React Host App
         run: |
           cd react-host-app
-          rm -rf node_modules package-lock.json
           npm install --save-dev cross-env
           npm install --force
           npx cross-env PORT=3000 npm run build
@@ -60,7 +57,6 @@ jobs:
       - name: Build React Remote App
         run: |
           cd react-remote-app
-          rm -rf node_modules package-lock.json
           npm install --save-dev cross-env
           npm install --force
           npx cross-env PORT=3001 npm run build
@@ -70,7 +66,6 @@ jobs:
       - name: Build Vue Host App
         run: |
           cd vue-host-app
-          rm -rf node_modules package-lock.json
           npm install --force
           npm run build
           cd ..
@@ -79,7 +74,6 @@ jobs:
       - name: Build Vue Remote App
         run: |
           cd vue-remote-app
-          rm -rf node_modules package-lock.json
           npm install --force
           npm run build
           cd ..
