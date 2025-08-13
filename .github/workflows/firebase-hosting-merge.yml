@@ -94,7 +94,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
           entryPoint: .
-          projectId: angulaar-remote-app
+          projectId: angulaar-host-app
 
       # 12. Deploy React Host App (optional)
       # - name: Deploy React Host App
@@ -124,7 +124,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP}}
           channelId: live
           entryPoint: .
-          projectId: vue-host-app
+          projectId: angulaar-host-app
 
       # 15. Deploy Vue Remote App
       - name: Deploy Vue Remote App
@@ -134,4 +134,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FFIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
           entryPoint: .
-          projectId: vue-remote-app
+          projectId: angulaar-host-app
