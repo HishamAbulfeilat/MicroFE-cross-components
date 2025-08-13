@@ -47,10 +47,12 @@ jobs:
       # 7. Build React Host App
       - name: Build React Host App
         run: |
-          cd react-host-app
-          yarn install --frozen-lockfile
-          yarn build
-          cd ..
+            cd react-host-app
+            corepack enable
+            corepack prepare yarn@4.2.2 --activate
+            yarn install --immutable
+            yarn build
+            cd ..
 
       # 8. Build React Remote App
       - name: Build React Remote App
