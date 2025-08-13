@@ -83,7 +83,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
-          entryPoint: angular-host-app
+          entryPoint: .
           projectId: angulaar-host-app
 
       # 11. Deploy Angular Remote App
@@ -93,7 +93,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
-          entryPoint: angular-remote-app
+          entryPoint: .
           projectId: angulaar-remote-app
 
       # 12. Deploy React Host App (optional)
@@ -123,7 +123,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP}}
           channelId: live
-          entryPoint: vue-host-app
+          entryPoint: .
           projectId: vue-host-app
 
       # 15. Deploy Vue Remote App
@@ -133,5 +133,5 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FFIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
-          entryPoint: vue-remote-app
+          entryPoint: .
           projectId: vue-remote-app
