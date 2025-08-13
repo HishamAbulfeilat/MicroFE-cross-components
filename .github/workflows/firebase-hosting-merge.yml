@@ -9,6 +9,9 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud.json
+
     steps:
       # 1. Checkout repository
       - name: Checkout repository
@@ -20,21 +23,19 @@ jobs:
         with:
           node-version: '20'
 
-      #2.1 Setup Google access
+      # 3. Write Service Account JSON to file
       - name: Set up Google credentials
-        run: |
-          echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}' > $HOME/gcloud.json
-          export GOOGLE_APPLICATION_CREDENTIALS="$HOME/gcloud.json"
+        run: echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}' > $GOOGLE_APPLICATION_CREDENTIALS
 
-      # 3. Install Firebase CLI
+      # 4. Install Firebase CLI
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
-      # 4. Clear npm cache
+      # 5. Clear npm cache
       - name: Clear npm cache
         run: npm cache clean --force
 
-      # 5. Build Angular Host App
+      # 6. Build Angular Host App
       - name: Build Angular Host App
         run: |
           cd angular-host-app
@@ -42,7 +43,7 @@ jobs:
           npm run build
           cd ..
 
-      # 6. Build Angular Remote App
+      # 7. Build Angular Remote App
       - name: Build Angular Remote App
         run: |
           cd angular-remote-app
@@ -50,23 +51,7 @@ jobs:
           npm run build
           cd ..
 
-      # 7. Build React Host App
-      # - name: Build React Host App
-      #   run: |
-      #       cd react-host-app
-      #       npm install --force
-      #       SKIP_PREFLIGHT_CHECK=true npm run build
-      #       cd ..
-
-      # # 8. Build React Remote App
-      # - name: Build React Remote App
-      #   run: |
-      #     cd react-remote-app
-      #     npm install --force
-      #     SKIP_PREFLIGHT_CHECK=true npm run build
-      #     cd ..
-
-      # 9. Build Vue Host App
+      # 8. Build Vue Host App
       - name: Build Vue Host App
         run: |
           cd vue-host-app
@@ -74,7 +59,7 @@ jobs:
           npm run build
           cd ..
 
-      # 10. Build Vue Remote App
+      # 9. Build Vue Remote App
       - name: Build Vue Remote App
         run: |
           cd vue-remote-app
@@ -82,26 +67,28 @@ jobs:
           npm run build
           cd ..
 
-      # 11. Deploy Angular Host App
-      - name: Deploy Angular Host App
-        run: firebase deploy --only hosting:angularHostApp 
+      # (Optional) React Host App
+      # - name: Build React Host App
+      #   run: |
+      #     cd react-host-app
+      #     npm install --force
+      #     SKIP_PREFLIGHT_CHECK=true npm run build
+      #     cd ..
 
-      # 12. Deploy Angular Remote App
-      - name: Deploy Angular Remote App
-        run: firebase deploy --only hosting:angularRemoteApp
+      # (Optional) React Remote App
+      # - name: Build React Remote App
+      #   run: |
+      #     cd react-remote-app
+      #     npm install --force
+      #     SKIP_PREFLIGHT_CHECK=true npm run build
+      #     cd ..
 
-      # 13. Deploy React Host App
-      # - name: Deploy React Host App
-      #   run: firebase deploy --only hosting:reactHostApp --token ${{ secrets.FIREBASE_TOKEN }}
-
-      # # 14. Deploy React Remote App
-      # - name: Deploy React Remote App
-      #   run: firebase deploy --only hosting:reactRemoteApp --token ${{ secrets.FIREBASE_TOKEN }}
-
-      # 15. Deploy Vue Host App
-      - name: Deploy Vue Host App
-        run: firebase deploy --only hosting:vueHostApp
-
-      # 16. Deploy Vue Remote App
-      - name: Deploy Vue Remote App
-        run: firebase deploy --only hosting:vueRemoteApp
+      # 10. Deploy all apps
+      - name: Deploy to Firebase Hosting
+        run: |
+          firebase deploy --only hosting:angularHostApp
+          firebase deploy --only hosting:angularRemoteApp
+          # firebase deploy --only hosting:reactHostApp
+          # firebase deploy --only hosting:reactRemoteApp
+          firebase deploy --only hosting:vueHostApp
+          firebase deploy --only hosting:vueRemoteApp
