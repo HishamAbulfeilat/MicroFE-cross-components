@@ -20,10 +20,6 @@ jobs:
         with:
           node-version: '20'
 
-      # 3. Write Service Account JSON to file
-      - name: Set up Google credentials
-        run: echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}' > $GOOGLE_APPLICATION_CREDENTIALS
-
       # 4. Install Firebase CLI
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
