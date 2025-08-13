@@ -45,20 +45,20 @@ jobs:
           cd ..
 
       # 7. Build React Host App
-      - name: Build React Host App
-        run: |
-            cd react-host-app
-            npm install --force
-            SKIP_PREFLIGHT_CHECK=true npm run build
-            cd ..
+      # - name: Build React Host App
+      #   run: |
+      #       cd react-host-app
+      #       npm install --force
+      #       SKIP_PREFLIGHT_CHECK=true npm run build
+      #       cd ..
 
-      # 8. Build React Remote App
-      - name: Build React Remote App
-        run: |
-          cd react-remote-app
-          npm install --force
-          SKIP_PREFLIGHT_CHECK=true npm run build
-          cd ..
+      # # 8. Build React Remote App
+      # - name: Build React Remote App
+      #   run: |
+      #     cd react-remote-app
+      #     npm install --force
+      #     SKIP_PREFLIGHT_CHECK=true npm run build
+      #     cd ..
 
       # 9. Build Vue Host App
       - name: Build Vue Host App
