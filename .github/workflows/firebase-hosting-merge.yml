@@ -9,9 +9,6 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud.json
-
     steps:
       # 1. Checkout repository
       - name: Checkout repository
