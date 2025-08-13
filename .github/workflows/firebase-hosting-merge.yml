@@ -48,10 +48,8 @@ jobs:
       - name: Build React Host App
         run: |
             cd react-host-app
-            corepack enable
-            corepack prepare yarn@4.2.2 --activate
-            yarn install --immutable
-            yarn build
+            npm install --force
+            npm run build
             cd ..
 
       # 8. Build React Remote App
