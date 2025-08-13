@@ -48,7 +48,7 @@ jobs:
       - name: Build React Host App
         run: |
           cd react-host-app
-          npm install --save-dev cross-env
+          npm install --force
           npx cross-env PORT=3000 npm run build
           cd ..
 
@@ -56,8 +56,8 @@ jobs:
       - name: Build React Remote App
         run: |
           cd react-remote-app
-          npm install --save-dev cross-env
-          npm run build
+          npm install --force
+          npx cross-env PORT=3000 npm run build
           cd ..
 
       # 9. Build Vue Host App
