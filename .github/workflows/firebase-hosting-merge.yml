@@ -85,12 +85,12 @@ jobs:
         run: firebase deploy --only hosting:angularRemoteApp --token ${{ secrets.FIREBASE_TOKEN }}
 
       # 13. Deploy React Host App
-      - name: Deploy React Host App
-        run: firebase deploy --only hosting:reactHostApp --token ${{ secrets.FIREBASE_TOKEN }}
+      # - name: Deploy React Host App
+      #   run: firebase deploy --only hosting:reactHostApp --token ${{ secrets.FIREBASE_TOKEN }}
 
-      # 14. Deploy React Remote App
-      - name: Deploy React Remote App
-        run: firebase deploy --only hosting:reactRemoteApp --token ${{ secrets.FIREBASE_TOKEN }}
+      # # 14. Deploy React Remote App
+      # - name: Deploy React Remote App
+      #   run: firebase deploy --only hosting:reactRemoteApp --token ${{ secrets.FIREBASE_TOKEN }}
 
       # 15. Deploy Vue Host App
       - name: Deploy Vue Host App
