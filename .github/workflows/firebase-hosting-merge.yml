@@ -77,24 +77,24 @@ jobs:
       #     cd ..
 
       # 10. Deploy Angular Host App
-      - name: Deploy Angular Host App
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
-          channelId: live
-          entryPoint: .
-          projectId: angulaar-host-app
+      # - name: Deploy Angular Host App
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: ${{ secrets.GITHUB_TOKEN }}
+      #     firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
+      #     channelId: live
+      #     entryPoint: .
+      #     projectId: angulaar-host-app
 
-      # 11. Deploy Angular Remote App
-      - name: Deploy Angular Remote App
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
-          channelId: live
-          entryPoint: .
-          projectId: angulaar-host-app
+      # # 11. Deploy Angular Remote App
+      # - name: Deploy Angular Remote App
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: ${{ secrets.GITHUB_TOKEN }}
+      #     firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
+      #     channelId: live
+      #     entryPoint: .
+      #     projectId: angulaar-host-app
 
       # 12. Deploy React Host App (optional)
       # - name: Deploy React Host App
@@ -117,21 +117,30 @@ jobs:
       #     projectId: react-remote-app
 
       # 14. Deploy Vue Host App
-      - name: Deploy Vue Host App
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP}}
-          channelId: live
-          entryPoint: .
-          projectId: angulaar-host-app
+      # - name: Deploy Vue Host App
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: ${{ secrets.GITHUB_TOKEN }}
+      #     firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP}}
+      #     channelId: live
+      #     entryPoint: .
+      #     projectId: angulaar-host-app
 
       # 15. Deploy Vue Remote App
-      - name: Deploy Vue Remote App
+      # - name: Deploy Vue Remote App
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: ${{ secrets.GITHUB_TOKEN }}
+      #     firebaseServiceAccount: ${{ secrets.FFIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
+      #     channelId: live
+      #     entryPoint: .
+      #     projectId: angulaar-host-app
+
+      - name: Deploy all apps
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FFIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAAR_HOST_APP }}
           channelId: live
           entryPoint: .
           projectId: angulaar-host-app
