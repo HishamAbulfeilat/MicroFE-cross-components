@@ -151,7 +151,7 @@ jobs:
       #create hosing sites:
       - name: Create Hosting Sites
         run: |
-          firebase use angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }}
+          firebase use angulaar-host-app --token ${{ secrets.FIREBASE_TOKEN }}
           firebase hosting:sites:create angular-host-app --project angulaar-host-app --token ${{ secrets.FIREBASE_TOKEN }} || echo "Site may already exist"
           firebase hosting:sites:create angular-remote-app --project angulaar-host-app --token ${{ secrets.FIREBASE_TOKEN }} || echo "Site may already exist"
           firebase hosting:sites:create react-host-app --project angulaar-host-app --token ${{ secrets.FIREBASE_TOKEN }} || echo "Site may already exist"
