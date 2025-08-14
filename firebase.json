@@ -23,28 +23,6 @@
       ]
     },
     {
-      "target": "reactHostApp",
-      "public": "react-host-app/build",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
-      "target": "reactRemoteApp",
-      "public": "react-remote-app/build",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
       "target": "vueHostApp",
       "public": "vue-host-app/dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],

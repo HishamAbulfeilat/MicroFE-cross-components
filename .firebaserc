@@ -11,12 +11,6 @@
         "angularRemoteApp": [
           "angular-remote-app"
         ],
-        "reactHostApp": [
-          "react-host-app"
-        ],
-        "reactRemoteApp": [
-          "react-remote-app"
-        ],
         "vueHostApp": [
           "vue-host-app"
         ],
