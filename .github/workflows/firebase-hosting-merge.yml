@@ -149,14 +149,15 @@ jobs:
 
 
       #create hosing sites:
-      - name: Create Hosting Sites in Firebase
+      - name: Create Hosting Sites
         run: |
-             firebase hosting:sites:create angular-host-app --project angulaar-host-app
-             firebase hosting:sites:create angular-remote-app --project angulaar-host-app
-             firebase hosting:sites:create react-host-app   --project angulaar-host-app
-             firebase hosting:sites:create react-remote-app --project angulaar-host-app
-             firebase hosting:sites:create vue-host-app     --project angulaar-host-app
-             firebase hosting:sites:create vue-remote-app   --project angulaar-host-app
+          firebase use angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }}
+          firebase hosting:sites:create angular-host-app --project angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }} || echo "Site may already exist"
+          firebase hosting:sites:create angular-remote-app --project angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }} || echo "Site may already exist"
+          firebase hosting:sites:create react-host-app --project angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }} || echo "Site may already exist"
+          firebase hosting:sites:create react-remote-app --project angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }} || echo "Site may already exist"
+          firebase hosting:sites:create vue-host-app --project angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }} || echo "Site may already exist"
+          firebase hosting:sites:create vue-remote-app --project angulaar-host-app --token ${{ secrets.FIREBASE_CI_TOKEN }} || echo "Site may already exist"
 
 
       - name: Deploy all apps
